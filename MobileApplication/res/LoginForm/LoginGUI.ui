@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="LoginGUI" cloudDestinationProperty="LoginGUI" uiid="LoginForm" >
+  <component type="Container" name="LoginContainer" cloudDestinationProperty="Container" uiid="ContainerLogin" scrollableX="true" scrollableY="true" layout="BoxLayout" boxLayoutAxis="Y" >
+    <component type="TextField" name="UsernameTF" cloudBoundProperty="text" cloudDestinationProperty="TextField" text="" hint="Nom utilisateur" >
+    </component>
+    <component type="TextField" name="PasswordTF" cloudBoundProperty="text" cloudDestinationProperty="TextField" text="" hint="Mot de passe" >
+    </component>
+    <component type="Button" name="connercterButton" cloudDestinationProperty="connercterButton" uiid="ButtonLogin" text="Se Connecter" >
+    </component>
+  </component>
+  <custom name="titleAreaUIID" type="java.lang.String" value="" />
+</component>

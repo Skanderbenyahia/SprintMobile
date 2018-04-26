@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="HomeGUI" cloudDestinationProperty="HomeGUI" uiid="HomeGUI" >
+  <custom name="titleUIID" type="java.lang.String" value="" />
+  <custom name="titleAreaUIID" type="java.lang.String" value="" />
+</component>
