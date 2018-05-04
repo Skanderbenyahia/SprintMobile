@@ -9,6 +9,8 @@ import com.codename1.ui.Button;
 import com.codename1.ui.Container;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
+import com.codename1.ui.Image;
+import com.codename1.ui.Label;
 import com.codename1.ui.TextField;
 import com.codename1.ui.Toolbar;
 import com.codename1.ui.events.ActionEvent;
@@ -17,6 +19,7 @@ import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.plaf.UIManager;
 import com.codename1.ui.util.Resources;
 import com.codename1.ui.util.UIBuilder;
+import java.io.IOException;
 
 /**
  *
@@ -37,6 +40,13 @@ public class HomeForm {
         c = uiBuilder.createContainer(theme, "HomeGUI");
         home = (Form) c;
         Toolbar tb = home.getToolbar();
+        Image logo = theme.getImage("dog (1).png");
+        Container TopBar = BorderLayout.east(new Label(logo));
+        TopBar.add(BorderLayout.WEST, new Label("PETMYPET", "SideMenuTagline"));
+        TopBar.setUIID("SideCommand");
+        tb.addComponentToSideMenu(TopBar);
+        tb.addMaterialCommandToSideMenu("home", FontImage.MATERIAL_HOME, e -> new HomeForm().getHome().show());
+        //tb.addMaterialCommandToSideMenu("Centre Dressage", FontImage.MATERIAL_HOME, e -> new CentreDressageForm().getCentreD().show());
 
         tb.addMaterialCommandToSideMenu("Adoption", FontImage.MATERIAL_WEB, new ActionListener() {
             @Override
@@ -60,12 +70,35 @@ public class HomeForm {
             }
         });
 
-        tb.addMaterialCommandToSideMenu("Hygiene&Soins", FontImage.MATERIAL_WEB, new ActionListener() {
+        tb.addMaterialCommandToSideMenu("Centre de toilettages", FontImage.MATERIAL_WEB, new ActionListener() 
+        {
             @Override
             public void actionPerformed(ActionEvent evt) {
+            
+                    CentreToilettageForm  ct = new CentreToilettageForm();
+                    ct.getF().show();
+               
 
             }
         });
+        
+          tb.addMaterialCommandToSideMenu("Veterinaires", FontImage.MATERIAL_WEB, new ActionListener() 
+        {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+            
+                    VeterinaireForm  ct = new VeterinaireForm();
+                    ct.getF().show();
+               
+
+            }
+        });
+        
+        
+        
+        
+        
+        
         tb.addMaterialCommandToSideMenu("Events", FontImage.MATERIAL_WEB, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {

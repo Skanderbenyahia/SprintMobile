@@ -45,7 +45,8 @@ public class ProduitForm {
         ServiceProduit sp = new ServiceProduit();
         Container c1 = new Container();
         List<Produit> listR = sp.findProduit();
-        for (Produit r : listR) {
+        for (Produit r : listR)
+        {
             Container ct = new Container();
             Label l = new Label(r.getLibelle());
             ct.add(theme.getImage("a.png"));

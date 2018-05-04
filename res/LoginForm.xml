@@ -77,6 +77,10 @@
         <val key="ButtonLogin.bgType" value="0" />
         <val key="ButtonLogin.fgColor" value="ffffff" />
         <font key="ButtonLogin.font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="1" actualSize="16.0" />
+        <val key="ContainerCommentaire.align" value="4" />
+        <border key="ContainerCommentaire.border" type="round" roundBorderColor="16777215" opacity="255" strokeColor="16737894" strokeOpacity="255" strokeThickness="2.0" strokeMM="false" shadowSpread="10" shadowOpacity="10" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
+        <val key="ContainerCommentaire.margin" value="0,0,20,20" />
+        <val key="ContainerCommentaire.padding" value="0,0,50,50" />
         <val key="ContainerLogin.align" value="4" />
         <val key="ContainerLogin.marUnit" value="1,1,0,0" />
         <val key="ContainerLogin.margin" value="10,0,5,0" />
@@ -85,5 +89,10 @@
         <val key="HomeGUI.bgType" value="1" />
         <val key="LoginForm.bgImage" value="background.jpg" />
         <val key="LoginForm.bgType" value="1" />
+        <val key="SideCommand.bgColor" value="f57777" />
+        <val key="SideCommand.fgColor" value="ffffcc" />
+        <val key="SideCommand.margin" value="0,1,0,0" />
+        <val key="SideCommand.padding" value="3,3,3,3" />
+        <val key="SideCommand.transparency" value="255" />
     </theme>
 </resource>
