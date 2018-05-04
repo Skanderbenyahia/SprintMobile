@@ -8,6 +8,8 @@
     </component>
     <component type="Button" name="connercterButton" cloudDestinationProperty="connercterButton" uiid="ButtonLogin" text="Se Connecter" >
     </component>
+    <component type="Button" name="inscriptionButton" cloudDestinationProperty="connercterButton" uiid="ButtonLogin" text="S'inscrire" >
+    </component>
   </component>
   <custom name="titleAreaUIID" type="java.lang.String" value="" />
 </component>

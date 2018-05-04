@@ -28,7 +28,7 @@ public class ServicesVeterinaire {
      {
         List<User> users = new ArrayList<>();
        ConnectionRequest con = new ConnectionRequest();
-        con.setUrl("http://localhost/PETMYPET/web/app_dev.php/afficher_veterinaires_front_JSON");
+        con.setUrl("http://localhost/Mobile/PETMYPETemna/web/app_dev.php/afficher_veterinaires_front_JSON");
         con.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
@@ -66,7 +66,7 @@ public class ServicesVeterinaire {
    {
         ConnectionRequest con = new ConnectionRequest();
         
-        String Url = "http://localhost/petmypet/web/app_dev.php/reserverVeterinairerJSON/" + ddebut + "/" + id_vet + "/" + id_user + "/" + description ;
+        String Url = "http://localhost/Mobile/PETMYPETemna/web/app_dev.php/reserverVeterinairerJSON/" + ddebut + "/" + id_vet + "/" + id_user + "/" + description ;
         con.setUrl(Url);
         con.addResponseListener((e) -> {
             String str = new String(con.getResponseData());
@@ -78,7 +78,7 @@ public class ServicesVeterinaire {
    public List<reservation_veterinaire> datepetexistant( String ddebut,int id_vet) {
         List<reservation_veterinaire> reservations = new ArrayList<>();
         ConnectionRequest con = new ConnectionRequest();
-        String Url = "http://localhost/PETMYPET/web/app_dev.php/ExistantJSON/"+ddebut +"/"+ id_vet;
+        String Url = "http://localhost/Mobile/PETMYPETemna/web/app_dev.php/ExistantJSON/"+ddebut +"/"+ id_vet;
         con.setUrl(Url);
         con.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -107,7 +107,7 @@ public class ServicesVeterinaire {
       {
         List<Integer> nbre = new ArrayList<>();
         ConnectionRequest con = new ConnectionRequest();
-        String Url = "http://localhost/petmypet/web/app_dev.php/nbreRDV";
+        String Url = "http://localhost/Mobile/PETMYPETemna/web/app_dev.php/nbreRDV";
         con.setUrl(Url);
         con.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -135,7 +135,7 @@ public class ServicesVeterinaire {
       {
         List<User> u = new ArrayList<>();
         ConnectionRequest con = new ConnectionRequest();
-        String Url = "http://localhost/petmypet/web/app_dev.php/getstat/";
+        String Url = "http://localhost/Mobile/PETMYPETemna/web/app_dev.php/getstat/";
         con.setUrl(Url);
         con.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -165,7 +165,7 @@ public class ServicesVeterinaire {
     {
         List<String> names = new ArrayList<>();
        ConnectionRequest con = new ConnectionRequest();
-        con.setUrl("http://localhost/petmypet/web/app_dev.php/usernom/"+Session.getCurrentSession());
+        con.setUrl("http://localhost/Mobile/PETMYPETemna/web/app_dev.php/usernom/"+Session.getCurrentSession());
         con.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {

@@ -30,7 +30,7 @@ public class ServiceCommentaire {
     public List<Commentaire> getAllCommentaires() {
         List<Commentaire> commentaires = new ArrayList<>();
         con = new ConnectionRequest();
-        con.setUrl("http://localhost/petmypet/web/app_dev.php/afficherCommentairesJSON");
+        con.setUrl("http://localhost/Mobile/PETMYPETemna/web/app_dev.php/afficherCommentairesJSON");
         con.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {

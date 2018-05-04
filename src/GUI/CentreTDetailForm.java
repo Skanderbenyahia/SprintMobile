@@ -6,17 +6,14 @@
 package GUI;
 
 import Entity.Commentaire;
-import Entity.Produit;
 import Entity.Session;
 import Entity.centreToilettage;
 import Service.ServiceCentreT;
 import Service.ServiceCommentaire;
-import Service.ServiceProduit;
 import Service.ServicesVeterinaire;
 import com.codename1.components.SpanLabel;
 import com.codename1.ui.Button;
 import com.codename1.ui.Container;
-import com.codename1.ui.Dialog;
 import com.codename1.ui.EncodedImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.Image;

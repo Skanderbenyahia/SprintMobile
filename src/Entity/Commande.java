@@ -13,25 +13,27 @@ import java.util.Date;
  */
 public class Commande {
     private int id;
+    private int id_client;
     private String description;
     private Date dateCommande;
     private float amount;
 
-    public Commande(int id, String description, Date dateCommande, float amount) {
-        this.id = id;
-        this.description = description;
-        this.dateCommande = dateCommande;
-        this.amount = amount;
-    }
-
-    public Commande(String description, Date dateCommande, float amount) {
-        this.description = description;
-        this.dateCommande = dateCommande;
-        this.amount = amount;
-    }
-
     public Commande() {
-        
+    }
+
+    public Commande(int id, int id_client, String description, Date dateCommande, float amount) {
+        this.id = id;
+        this.id_client = id_client;
+        this.description = description;
+        this.dateCommande = dateCommande;
+        this.amount = amount;
+    }
+
+    public Commande(int id_client, String description, Date dateCommande, float amount) {
+        this.id_client = id_client;
+        this.description = description;
+        this.dateCommande = dateCommande;
+        this.amount = amount;
     }
 
     public int getId() {
@@ -40,6 +42,14 @@ public class Commande {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getId_client() {
+        return id_client;
+    }
+
+    public void setId_client(int id_client) {
+        this.id_client = id_client;
     }
 
     public String getDescription() {
@@ -68,8 +78,10 @@ public class Commande {
 
     @Override
     public String toString() {
-        return "Commande{" + "id=" + id + ", description=" + description + ", dateCommande=" + dateCommande + ", amount=" + amount + '}';
+        return "Commande{" + "id=" + id + ", id_client=" + id_client + ", description=" + description + ", dateCommande=" + dateCommande + ", amount=" + amount + '}';
     }
+
+    
     
     
 }

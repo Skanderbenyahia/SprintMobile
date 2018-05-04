@@ -5,21 +5,21 @@
  */
 package GUI;
 
-import com.codename1.ui.Button;
+import Service.ServiceProduit;
+import com.codename1.components.ImageViewer;
+import static com.codename1.ui.Component.CENTER;
 import com.codename1.ui.Container;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.Image;
 import com.codename1.ui.Label;
-import com.codename1.ui.TextField;
 import com.codename1.ui.Toolbar;
-import com.codename1.ui.events.ActionEvent;
-import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BorderLayout;
+import com.codename1.ui.layouts.FlowLayout;
 import com.codename1.ui.plaf.UIManager;
 import com.codename1.ui.util.Resources;
 import com.codename1.ui.util.UIBuilder;
-import java.io.IOException;
+
 
 /**
  *
@@ -31,89 +31,39 @@ public class HomeForm {
     private Container c;
     private UIBuilder uiBuilder;
     private Form home;
+    private Image image;
+    private ImageViewer img;
 
     public HomeForm() {
 
-        home = new Form("Acceuil", new BorderLayout(BorderLayout.CENTER_BEHAVIOR_CENTER_ABSOLUTE));
+        home = new Form("", new FlowLayout(CENTER, CENTER));
         uiBuilder = new UIBuilder();
         theme = UIManager.initFirstTheme("/LoginForm");
         c = uiBuilder.createContainer(theme, "HomeGUI");
         home = (Form) c;
+        //menu
         Toolbar tb = home.getToolbar();
         Image logo = theme.getImage("dog (1).png");
         Container TopBar = BorderLayout.east(new Label(logo));
         TopBar.add(BorderLayout.WEST, new Label("PETMYPET", "SideMenuTagline"));
         TopBar.setUIID("SideCommand");
+        ServiceProduit sp = new ServiceProduit();
         tb.addComponentToSideMenu(TopBar);
+        tb.addCommandToLeftBar("Panier", theme.getImage(String.valueOf(sp.findcountpanier()) + ".png"), e -> new PanierForm().getF().show());
+        tb.addCommandToLeftBar("Déconnexion", theme.getImage(""), e -> new PanierForm().getF().show());
         tb.addMaterialCommandToSideMenu("home", FontImage.MATERIAL_HOME, e -> new HomeForm().getHome().show());
-        //tb.addMaterialCommandToSideMenu("Centre Dressage", FontImage.MATERIAL_HOME, e -> new CentreDressageForm().getCentreD().show());
-
-        tb.addMaterialCommandToSideMenu("Adoption", FontImage.MATERIAL_WEB, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-
-            }
-        });
-
-        tb.addMaterialCommandToSideMenu("Ventes", FontImage.MATERIAL_WEB, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                ProduitForm p = new ProduitForm();
-                p.getF().show();
-            }
-        });
-
-        tb.addMaterialCommandToSideMenu("Services", FontImage.MATERIAL_WEB, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-
-            }
-        });
-
-        tb.addMaterialCommandToSideMenu("Centre de toilettages", FontImage.MATERIAL_WEB, new ActionListener() 
-        {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-            
-                    CentreToilettageForm  ct = new CentreToilettageForm();
-                    ct.getF().show();
-               
-
-            }
-        });
-        
-          tb.addMaterialCommandToSideMenu("Veterinaires", FontImage.MATERIAL_WEB, new ActionListener() 
-        {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-            
-                    VeterinaireForm  ct = new VeterinaireForm();
-                    ct.getF().show();
-               
-
-            }
-        });
-        
-        
-        
-        
-        
-        
-        tb.addMaterialCommandToSideMenu("Events", FontImage.MATERIAL_WEB, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-
-            }
-        });
-        tb.addMaterialCommandToSideMenu("Panier", FontImage.MATERIAL_WEB, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-                    PanierForm p=new PanierForm();
-                    p.getF().show();
-            }
-        });
-
-        
+        tb.addMaterialCommandToSideMenu("Adoption", FontImage.MATERIAL_WEB, e -> new AdoptionForm().getF().show());
+        tb.addMaterialCommandToSideMenu("Ventes", FontImage.MATERIAL_WEB, e -> new ProduitForm().getF().show());
+        tb.addMaterialCommandToSideMenu("CentreDressage", FontImage.MATERIAL_WEB, e -> new CentreDressageForm().getCentreD().show());
+        tb.addMaterialCommandToSideMenu("Petsitter", FontImage.MATERIAL_WEB, e -> new ReservationPetsitterForm().getPet().show());
+        tb.addMaterialCommandToSideMenu("Veterinaire", FontImage.MATERIAL_WEB, e -> new VeterinaireForm().getF().show());
+        tb.addMaterialCommandToSideMenu("Centre Toilettage", FontImage.MATERIAL_WEB, e -> new CentreToilettageForm().getF().show());
+        tb.addMaterialCommandToSideMenu("Concours", FontImage.MATERIAL_HOME, e -> new eventsform().getCentreD().show());
+        tb.addMaterialCommandToSideMenu("conseils", FontImage.MATERIAL_HOME, e -> new Conseilsform().getCentreD().show());
+        tb.addMaterialCommandToSideMenu("WishList", FontImage.MATERIAL_WEB, e -> new WishListForm().getF().show());
+        Image homeimage = theme.getImage("mobileHome.png");
+        Label homeimg = new Label(homeimage);
+        home.add(homeimg);
     }
 
     public Form getHome() {

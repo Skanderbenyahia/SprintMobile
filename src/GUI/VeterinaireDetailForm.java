@@ -25,6 +25,7 @@ import com.codename1.ui.Toolbar;
 import com.codename1.ui.URLImage;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
+import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.plaf.UIManager;
 import com.codename1.ui.spinner.Picker;
@@ -73,7 +74,7 @@ public class VeterinaireDetailForm {
             }
         });
 
-        Container ct2 = new Container();
+        Container ct2 = new Container(BoxLayout.y());
 
         SpanLabel spNom = new SpanLabel(u.getNom());
         nom = new Label(u.getNom());
@@ -109,10 +110,10 @@ public class VeterinaireDetailForm {
         ct2.add(spPrenom);
         ct2.add(spAdresse);
         ct2.add(image);
-        ct2.add(rdv);
         ct2.add(p);
         ct2.add(t);
         ct2.add(description);
+        ct2.add(rdv);
 
         rdv.addActionListener(new ActionListener() {
             @Override
@@ -133,8 +134,7 @@ public class VeterinaireDetailForm {
 
                 } else {
 
-                    if (r.isEmpty()) 
-                    {
+                    if (r.isEmpty()) {
                         s.reserverVeterinaire(date_debut, u.getId(), Session.getCurrentSession(), description.getSelectedItem());
                         Dialog.show("good", " Rendez-vous pris avec succés", "ok", null);
                     } else {
@@ -143,8 +143,6 @@ public class VeterinaireDetailForm {
                 }
             }
         });
-
-        
 
         f.add(ct2);
 
@@ -172,7 +170,7 @@ public class VeterinaireDetailForm {
                     table.addCell("Prenom");
                     table.addCell(u.getPrenom());
                     table.addCell("telephone");
-                    table.addCell(u.getTelephone()+"");
+                    table.addCell(u.getTelehone() + "");
                     document.add(table);
                     document.close();
 

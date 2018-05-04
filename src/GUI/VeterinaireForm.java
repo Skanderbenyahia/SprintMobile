@@ -70,10 +70,11 @@ public class VeterinaireForm {
                 enc = EncodedImage.create("/giphy.gif");
             } catch (IOException ex) {
             }
-            Image image = URLImage.createToStorage(enc, r.getNom(), "http://localhost/PETMYPET/web/images/" + r.getNom() + ".jpg");
+            Image image = URLImage.createToStorage(enc, r.getNom(), "http://localhost/Mobile/PETMYPETemna/web/images/" + r.getNom() + ".jpg");
             img.add(image);
 
-            Container info = new Container(new BoxLayout(BoxLayout.X_AXIS));
+            Container info = new Container(new BoxLayout(BoxLayout.Y_AXIS));
+            Container info2 = new Container(new BoxLayout(BoxLayout.Y_AXIS));
             Label nom = new Label(r.getNom());
             Label prenom = new Label(r.getPrenom());
             Label adresse = new Label(r.getAdresse());
@@ -82,10 +83,14 @@ public class VeterinaireForm {
             info.add(nom);
             info.add(prenom);
             info.add(adresse);
-
+            Label imge = new Label(image.fill(150, 150));
             info.setLeadComponent(nom);
+            info2.add(imge);
+            f.add(info2);
             f.add(info);
-            f.add(img);
+            
+            
+            
             nom.addPointerPressedListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent evt) {
@@ -108,7 +113,7 @@ public class VeterinaireForm {
                 System.out.println(sv.nbreRDV().get(0));
 
                 List<User> liste = new ArrayList<User>();
-                    liste = sv.getStat();
+                liste = sv.getStat();
                 double[] values = new double[]{12, 14, 11, 10, 19};
                 
                 int[] colors = new int[]{ColorUtil.BLUE, ColorUtil.GREEN, ColorUtil.MAGENTA, ColorUtil.YELLOW, ColorUtil.CYAN};

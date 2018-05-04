@@ -10,6 +10,8 @@ import Entity.Ligne;
 import Entity.PaymentOrder;
 import Entity.Produit;
 import Entity.Session;
+import GUI.HomeForm;
+import GUI.PanierForm;
 import com.codename1.io.CharArrayReader;
 import com.codename1.io.ConnectionRequest;
 import com.codename1.io.JSONParser;
@@ -34,11 +36,13 @@ import java.util.Map;
 public class ServiceProduit {
 
     private ConnectionRequest con;
-    static double total=0;
+    double total;
+    int count;
+    int reduction;
     public List<Produit> findProduit() {
         List<Produit> produits = new ArrayList<>();
         con = new ConnectionRequest();
-        con.setUrl("http://localhost/PETMYPET/web/app_dev.php/produits");
+        con.setUrl("http://localhost/Mobile/PETMYPETSkan/web/app_dev.php/produits");
         con.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
@@ -75,7 +79,7 @@ public class ServiceProduit {
     public List<Ligne> findPanier() {
         List<Ligne> lignes = new ArrayList<>();
         con = new ConnectionRequest();
-        con.setUrl("http://localhost/PETMYPET/web/app_dev.php/panier");
+        con.setUrl("http://localhost/Mobile/PETMYPETSkan/web/app_dev.php/Panier/"+Session.getCurrentSession());
         con.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
@@ -97,6 +101,7 @@ public class ServiceProduit {
                             int prix = Math.round(Float.parseFloat(obj.get("prix").toString()));
                             ligne.setPrix(prix);
                             int quantite = Math.round(Float.parseFloat(obj.get("quantite").toString()));
+                            
                             ligne.setQuantite(quantite);
                             lignes.add(ligne);
                         }
@@ -111,7 +116,7 @@ public class ServiceProduit {
 
     public void ajouterPanier(int id_produit,int quantite,int id_client) {
         ConnectionRequest con = new ConnectionRequest();
-        String Url = "http://localhost/PETMYPET/web/app_dev.php/ajouterPanier/"+id_produit+"/"+quantite+"/"+id_client;
+        String Url = "http://localhost/Mobile/PETMYPETSkan/web/app_dev.php/ajouterPanier/"+id_produit+"/"+quantite+"/"+id_client;
         con.setUrl(Url);
         con.addResponseListener((e) -> {
             String str = new String(con.getResponseData());
@@ -123,7 +128,7 @@ public class ServiceProduit {
     public double findtotal() {
         
         con = new ConnectionRequest();
-        con.setUrl("http://localhost/PETMYPET/web/app_dev.php/Panier/total/"+Session.getCurrentSession());
+        con.setUrl("http://localhost/Mobile/PETMYPETSkan/web/app_dev.php/Panier/total/"+Session.getCurrentSession());
         con.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
@@ -135,11 +140,20 @@ public class ServiceProduit {
                     System.out.println("info : " + list);
                     if (list != null) {
                         for (Map<String, Object> obj : list) {
+                            if(obj.get("total")==null)
+                            {
+                                total=0.0;
+                            }
+                            else
+                            {
                             total=Double.parseDouble(obj.get("total").toString());
-                            
+                            }
                         }
                     }
+                    
+                    
                 } catch (IOException ex) {
+                    
                 }
             }
         });
@@ -147,14 +161,10 @@ public class ServiceProduit {
         return total;
     }
     
-    
-    
-    public void commanderPanier()
-    {
-        Commande c=new Commande();
-
+    public int findcountpanier() {
+        
         con = new ConnectionRequest();
-        con.setUrl("http://localhost/PETMYPET/web/app_dev.php/Panier/total/"+Session.getCurrentSession());
+        con.setUrl("http://localhost/Mobile/PETMYPETSkan/web/app_dev.php/Panier/count/"+Session.getCurrentSession());
         con.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
@@ -166,8 +176,10 @@ public class ServiceProduit {
                     System.out.println("info : " + list);
                     if (list != null) {
                         for (Map<String, Object> obj : list) {
-                            Float total=Float.parseFloat(obj.get("total").toString());
-                            c.setAmount(total);
+                            
+                            count=Integer.parseInt(obj.get("quantitetotal").toString());  
+                            
+                             
                         }
                     }
                 } catch (IOException ex) {
@@ -175,9 +187,75 @@ public class ServiceProduit {
             }
         });
         NetworkManager.getInstance().addToQueueAndWait(con);
+        return count;
+    }
+    
+    public int findreduction() {
+        
+        con = new ConnectionRequest();
+        con.setUrl("http://localhost/Mobile/PETMYPETSkan/web/app_dev.php/User/reduction/"+Session.getCurrentSession());
+        con.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                try {
+                    JSONParser j = new JSONParser();
+                    Map<String, Object> Produits = j.parseJSON(new CharArrayReader(new String(con.getResponseData()).toCharArray()));
+                    System.out.println(Produits);
+                    List<Map<String, Object>> list = (List<Map<String, Object>>) Produits.get("root");
+                    System.out.println("info : " + list);
+                    if (list != null) {
+                        for (Map<String, Object> obj : list) {
+                            if(obj.get("reduction")==null)
+                            {
+                                reduction=0;
+                            }
+                            else
+                            {
+                            reduction=Integer.parseInt(obj.get("reduction").toString()); 
+                            }
+                              
+                        }
+                    }
+                } catch (IOException ex) {
+                }
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(con);
+        return reduction;
+    }
+    
 
-        String Url = "http://localhost/PETMYPET/web/app_dev.php/Panier/commander/"+Session.getCurrentSession()+"/"+c.getAmount();
+    
+    public void commanderPanier()
+    {
+        Commande c=new Commande();
+        c.setId_client(Session.getCurrentSession());
+        int x=findreduction();
+        if(x%3==0)
+        {
+            float tot=(float)findtotal();
+            tot=(float) (tot-tot*0.2);
+        c.setAmount(tot);
+        }
+        else
+        {
+            c.setAmount((float)findtotal());
+        }
+        String Url = "http://localhost/Mobile/PETMYPETSkan/web/app_dev.php/Panier/commander/"+c.getId_client()+"/"+c.getAmount();
         con.setUrl(Url);
+        con.addResponseListener((e) -> {
+            String str = new String(con.getResponseData());
+            System.out.println(str);
+        });
+        NetworkManager.getInstance().addToQueueAndWait(con);
+        
+    }
+    
+    public void deletePanier(int id)
+    {
+        String Url1 = "http://localhost/Mobile/PETMYPETSkan/web/app_dev.php/supprimerPanierjson/"+id;
+        con=new ConnectionRequest();
+        con.setUrl(Url1);
         con.addResponseListener((e) -> {
             String str = new String(con.getResponseData());
             System.out.println(str);
@@ -196,12 +274,15 @@ public class ServiceProduit {
             if (charge.getStatus().equalsIgnoreCase("succeeded")) {
                 ServiceProduit ps = new ServiceProduit();
                 ps.commanderPanier();
+                deletePanier(Session.getCurrentSession());
                /* Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Information Dialog");
                 alert.setHeaderText(null);
                 alert.setContentText("Commande éffectué avec succées !");
                 alert.showAndWait();*/
                 System.out.println("success");
+                HomeForm h=new HomeForm();
+                h.getHome().show();
 
             }
 
@@ -215,5 +296,20 @@ public class ServiceProduit {
                 System.out.println("error");
             }
         }
+    }
+
+    public boolean suppproduit(int user) {
+        String Url1 = "http://localhost/Mobile/PETMYPETSkan/web/app_dev.php/supprimerproduitpanierjson/"+user;
+        con=new ConnectionRequest();
+        con.setUrl(Url1);
+        con.addResponseListener((e) -> {
+            String str = new String(con.getResponseData());
+            System.out.println(str);
+        });
+        NetworkManager.getInstance().addToQueueAndWait(con);
+        PanierForm p=new PanierForm();
+        p.getF().remove();
+        p.getF().show();
+        return true;
     }
 }

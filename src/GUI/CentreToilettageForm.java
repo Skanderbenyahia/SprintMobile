@@ -5,7 +5,6 @@
  */
 package GUI;
 
-
 import Entity.centreToilettage;
 import Service.ServiceCentreT;
 import com.codename1.ui.Container;
@@ -29,16 +28,13 @@ import java.util.List;
  * @author Mimouna
  */
 public class CentreToilettageForm {
-    
+
     private Form f;
     private Resources theme;
     private UIBuilder uiBuilder;
     private Container c;
-    
-    
-    
-    public CentreToilettageForm()
-    {
+
+    public CentreToilettageForm() {
         f = new Form("CentreToilettage");
         uiBuilder = new UIBuilder();
         theme = UIManager.initFirstTheme("/LoginForm");
@@ -47,52 +43,47 @@ public class CentreToilettageForm {
         Toolbar tb = f.getToolbar();
         tb.addCommandToLeftBar("Back", theme.getImage("back-command.png"), new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent evt) 
-            {
-                HomeForm h=new HomeForm();
+            public void actionPerformed(ActionEvent evt) {
+                HomeForm h = new HomeForm();
                 h.getHome().show();
             }
         });
-        
-        ServiceCentreT  sc = new ServiceCentreT();
+
+        ServiceCentreT sc = new ServiceCentreT();
         Container c1 = new Container(new BoxLayout(BoxLayout.Y_AXIS));
         List<centreToilettage> listR = sc.findCentreT();
-        for (centreToilettage r : listR)
-        {
-            
-            Container img = new Container(new BoxLayout(BoxLayout.Y_AXIS));
-            img.add(theme.getImage("a.png"));
-            
-            Container info = new Container(new BoxLayout(BoxLayout.X_AXIS));
-            Label l = new Label(r.getLibelle());
-            Label d = new Label(r.getDescription());
-            Label A = new Label(r.getAdresse());
-            
-            info.add(l);
-            info.add(A);
-            info.add(d);
-             EncodedImage enc=null;
+        for (centreToilettage r : listR) {
+            EncodedImage enc = null;
             try {
                 enc = EncodedImage.create("/giphy.gif");
             } catch (IOException ex) {
             }
-            Image image=URLImage.createToStorage(enc, r.getImage(), "http://localhost/PETMYPET/web/images/"+r.getImage());
+            Container img = new Container(new BoxLayout(BoxLayout.Y_AXIS));
+
+            Container info = new Container(new BoxLayout(BoxLayout.Y_AXIS));
+            Label l = new Label(r.getLibelle());
+            Label d = new Label(r.getDescription());
+            Label A = new Label(r.getAdresse());
+            Image image = URLImage.createToStorage(enc, r.getImage(), "http://localhost/Mobile/PETMYPETemna/web/images/" + r.getImage());
             img.add(image);
-            
-            
+            Label imge = new Label(image.fill(150, 150));
+            info.add(l);
+            info.add(A);
+            info.add(d);
+
             info.setLeadComponent(l);
             f.add(info);
-            f.add(img);
+            f.add(imge);
             l.addPointerPressedListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent evt) {
-                    CentreTDetailForm p=new CentreTDetailForm(r);
+                    CentreTDetailForm p = new CentreTDetailForm(r);
                     p.getF().show();
                 }
             });
 
         }
-        
+
     }
 
     public Form getF() {
@@ -103,5 +94,4 @@ public class CentreToilettageForm {
         this.f = f;
     }
 
-    
 }

@@ -5,7 +5,6 @@
  */
 package Service;
 
-import Entity.Produit;
 import Entity.Session;
 import Entity.User;
 import com.codename1.io.CharArrayReader;
@@ -15,7 +14,6 @@ import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
 import com.codename1.ui.events.ActionListener;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -32,7 +30,7 @@ public class ServiceUser {
         ConnectionRequest con = new ConnectionRequest();
         User user = new User();
         user.setId(0);
-        con.setUrl("http://localhost/PETMYPET/web/app_dev.php/auth/"+username);
+        con.setUrl("http://localhost/Mobile/PETMYPETSALY/web/app_dev.php/auth/"+username);
         con.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
@@ -57,19 +55,9 @@ public class ServiceUser {
                     
 
             }
-            
- 
         });
         NetworkManager.getInstance().addToQueueAndWait(con);
         return user;
+    }       
 
-    }
-    
-    
-    //http://localhost/petmypet/web/app_dev.php/register/confirmed
-    
-    
-    
-
-    
 }

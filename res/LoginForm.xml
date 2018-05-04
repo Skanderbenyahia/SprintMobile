@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <resource majorVersion="1" minorVersion="7" useXmlUI="false">
+    <image name="0.png" type="multi"  />
+    <image name="1.png" type="multi"  />
+    <image name="2.png" type="multi"  />
+    <image name="3.png" type="multi"  />
+    <image name="4.png" type="multi"  />
+    <image name="5.png" type="multi"  />
+    <image name="6.png" type="multi"  />
+    <image name="7.png" type="multi"  />
+    <image name="8.png" type="multi"  />
+    <image name="9.png" type="multi"  />
+    <image name="animal-paw-print.png" type="multi"  />
     <image name="background.jpg" type="multi"  />
     <image name="background2.png" type="multi"  />
     <image name="Button.borderBottom_1.png" type="multi"  />
@@ -8,46 +19,64 @@
     <image name="Button.borderBottom_3.png" type="multi"  />
     <image name="Button.borderBottom_4.png" type="multi"  />
     <image name="Button.borderBottom_5.png" type="multi"  />
+    <image name="Button.borderBottom_6.png" type="multi"  />
+    <image name="Button.borderBottom_7.png" type="multi"  />
     <image name="Button.borderBottomL_1.png" type="multi"  />
     <image name="Button.borderBottomL_2.png" type="multi"  />
     <image name="Button.borderBottomL_3.png" type="multi"  />
     <image name="Button.borderBottomL_4.png" type="multi"  />
     <image name="Button.borderBottomL_5.png" type="multi"  />
+    <image name="Button.borderBottomL_6.png" type="multi"  />
+    <image name="Button.borderBottomL_7.png" type="multi"  />
     <image name="Button.borderBottomR_1.png" type="multi"  />
     <image name="Button.borderBottomR_2.png" type="multi"  />
     <image name="Button.borderBottomR_3.png" type="multi"  />
     <image name="Button.borderBottomR_4.png" type="multi"  />
     <image name="Button.borderBottomR_5.png" type="multi"  />
+    <image name="Button.borderBottomR_6.png" type="multi"  />
+    <image name="Button.borderBottomR_7.png" type="multi"  />
     <image name="Button.borderCenter_1.png" type="multi"  />
     <image name="Button.borderCenter_2.png" type="multi"  />
     <image name="Button.borderCenter_3.png" type="multi"  />
     <image name="Button.borderCenter_4.png" type="multi"  />
     <image name="Button.borderCenter_5.png" type="multi"  />
+    <image name="Button.borderCenter_6.png" type="multi"  />
+    <image name="Button.borderCenter_7.png" type="multi"  />
     <image name="Button.borderLeft_1.png" type="multi"  />
     <image name="Button.borderLeft_2.png" type="multi"  />
     <image name="Button.borderLeft_3.png" type="multi"  />
     <image name="Button.borderLeft_4.png" type="multi"  />
     <image name="Button.borderLeft_5.png" type="multi"  />
+    <image name="Button.borderLeft_6.png" type="multi"  />
+    <image name="Button.borderLeft_7.png" type="multi"  />
     <image name="Button.borderRight_1.png" type="multi"  />
     <image name="Button.borderRight_2.png" type="multi"  />
     <image name="Button.borderRight_3.png" type="multi"  />
     <image name="Button.borderRight_4.png" type="multi"  />
     <image name="Button.borderRight_5.png" type="multi"  />
+    <image name="Button.borderRight_6.png" type="multi"  />
+    <image name="Button.borderRight_7.png" type="multi"  />
     <image name="Button.borderTop_1.png" type="multi"  />
     <image name="Button.borderTop_2.png" type="multi"  />
     <image name="Button.borderTop_3.png" type="multi"  />
     <image name="Button.borderTop_4.png" type="multi"  />
     <image name="Button.borderTop_5.png" type="multi"  />
+    <image name="Button.borderTop_6.png" type="multi"  />
+    <image name="Button.borderTop_7.png" type="multi"  />
     <image name="Button.borderTopL_1.png" type="multi"  />
     <image name="Button.borderTopL_2.png" type="multi"  />
     <image name="Button.borderTopL_3.png" type="multi"  />
     <image name="Button.borderTopL_4.png" type="multi"  />
     <image name="Button.borderTopL_5.png" type="multi"  />
+    <image name="Button.borderTopL_6.png" type="multi"  />
+    <image name="Button.borderTopL_7.png" type="multi"  />
     <image name="Button.borderTopR_1.png" type="multi"  />
     <image name="Button.borderTopR_2.png" type="multi"  />
     <image name="Button.borderTopR_3.png" type="multi"  />
     <image name="Button.borderTopR_4.png" type="multi"  />
     <image name="Button.borderTopR_5.png" type="multi"  />
+    <image name="Button.borderTopR_6.png" type="multi"  />
+    <image name="Button.borderTopR_7.png" type="multi"  />
     <image name="ContainerLogin.borderBottom_1.png" type="multi"  />
     <image name="ContainerLogin.borderBottomL_1.png" type="multi"  />
     <image name="ContainerLogin.borderBottomR_1.png" type="multi"  />
@@ -57,8 +86,19 @@
     <image name="ContainerLogin.borderTop_1.png" type="multi"  />
     <image name="ContainerLogin.borderTopL_1.png" type="multi"  />
     <image name="ContainerLogin.borderTopR_1.png" type="multi"  />
+    <image name="dog (1).png" type="multi"  />
+    <image name="dog-dish.png" type="multi"  />
+    <image name="download.jpg" type="multi"  />
+    <image name="election-event-on-a-calendar-with-star-symbol.png" type="multi"  />
+    <image name="floki.jpg" type="multi"  />
+    <image name="home-icon-silhouette.png" type="multi"  />
     <ui name="HomeGUI" />
+    <image name="jaime.png" type="multi"  />
+    <image name="jaimepas.png" type="multi"  />
     <ui name="LoginGUI" />
+    <image name="mobileHome.png" type="multi"  />
+    <image name="ragnar.jpg" type="multi"  />
+    <image name="syringe.png" type="multi"  />
     <image name="TextField.borderBottom_1.png" type="multi"  />
     <image name="TextField.borderBottomL_1.png" type="multi"  />
     <image name="TextField.borderBottomR_1.png" type="multi"  />
@@ -69,16 +109,18 @@
     <image name="TextField.borderTopR_1.png" type="multi"  />
     <theme name="Theme 1">
         <val key="@includeNativeBool" value="true" />
-        <border key="Button.border" type="image" i1="Button.borderTop_5.png" i2="Button.borderBottom_5.png" i3="Button.borderLeft_5.png" i4="Button.borderRight_5.png" i5="Button.borderTopL_5.png" i6="Button.borderTopR_5.png" i7="Button.borderBottomL_5.png" i8="Button.borderBottomR_5.png" i9="Button.borderCenter_5.png" />
+        <val key="Button.bgColor" value="f57777" />
+        <border key="Button.border" type="rounded" thickness="0" arcW="2" arcH="2" color="16545655" />
+        <val key="Button.fgColor" value="ffffcc" />
         <val key="Button.padding" value="0,0,20,20" />
-        <val key="Button.transparency" value="0" />
+        <val key="Button.transparency" value="255" />
         <val key="ButtonLogin.align" value="4" />
         <gradient key="ButtonLogin.bgGradient" color1="0" color2="0" posX="0.5" posY="0.5" radius="1.0" />
         <val key="ButtonLogin.bgType" value="0" />
         <val key="ButtonLogin.fgColor" value="ffffff" />
         <font key="ButtonLogin.font" type="ttf" face="0" style="0" size="0" name="native:MainRegular" family="native:MainRegular" sizeSettings="1" actualSize="16.0" />
         <val key="ContainerCommentaire.align" value="4" />
-        <border key="ContainerCommentaire.border" type="round" roundBorderColor="16777215" opacity="255" strokeColor="16737894" strokeOpacity="255" strokeThickness="2.0" strokeMM="false" shadowSpread="10" shadowOpacity="10" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
+        <border key="ContainerCommentaire.border" type="round" roundBorderColor="16764108" opacity="255" strokeColor="16737894" strokeOpacity="255" strokeThickness="3.0" strokeMM="false" shadowSpread="10" shadowOpacity="0" shadowX="0.5" shadowY="0.5" shadowBlur="10.0" shadowMM="false" rectangle="true" />
         <val key="ContainerCommentaire.margin" value="0,0,20,20" />
         <val key="ContainerCommentaire.padding" value="0,0,50,50" />
         <val key="ContainerLogin.align" value="4" />
@@ -87,12 +129,48 @@
         <val key="ContainerLogin.padding" value="100,100,0,10" />
         <val key="HomeGUI.bgImage" value="background2.png" />
         <val key="HomeGUI.bgType" value="1" />
+        <val key="Label.fgColor" value="ffffcc" />
         <val key="LoginForm.bgImage" value="background.jpg" />
         <val key="LoginForm.bgType" value="1" />
+        <val key="MultiButton.align" value="1" />
+        <val key="MultiButton.fgColor" value="ffffcc" />
+        <font key="MultiButton.font" type="system" face="0" style="0" size="0" />
+        <val key="MultiButton.margin" value="10,10,10,10" />
+        <val key="MultiButton.padding" value="10,10,10,10" />
+        <val key="MultiButton.transparency" value="0" />
+        <val key="MultiLine1.fgColor" value="ffffcc" />
+        <val key="MultiLine1.margin" value="10,10,10,10" />
+        <val key="MultiLine1.padding" value="10,10,10,10" />
+        <val key="MultiLine2.fgColor" value="ffffcc" />
+        <val key="MultiLine2.margin" value="10,10,10,10" />
+        <val key="MultiLine2.padding" value="10,10,10,10" />
+        <val key="SideCommand.align" value="1" />
         <val key="SideCommand.bgColor" value="f57777" />
+        <border key="SideCommand.border" type="empty" />
         <val key="SideCommand.fgColor" value="ffffcc" />
+        <font key="SideCommand.font" type="ttf" face="0" style="0" size="0" name="native:MainBold" family="native:MainBold" sizeSettings="3" actualSize="3.0" />
         <val key="SideCommand.margin" value="0,1,0,0" />
+        <val key="SideCommand.padUnit" value="2,2,2,2" />
         <val key="SideCommand.padding" value="3,3,3,3" />
+        <val key="SideCommand.press#bgColor" value="ffffcc" />
+        <val key="SideCommand.press#derive" value="SideCommand" />
+        <val key="SideCommand.sel#bgColor" value="ffffcc" />
+        <val key="SideCommand.sel#derive" value="SideCommand" />
+        <val key="SideCommand.textDecoration" value="0" />
         <val key="SideCommand.transparency" value="255" />
+        <val key="SideMenuTagline.align" value="1" />
+        <val key="SideMenuTagline.bgColor" value="f57777" />
+        <border key="SideMenuTagline.border" type="empty" />
+        <val key="SideMenuTagline.fgColor" value="ffffcc" />
+        <font key="SideMenuTagline.font" type="ttf" face="0" style="0" size="0" name="native:MainBold" family="native:MainBold" sizeSettings="3" actualSize="3.0" />
+        <val key="SideMenuTagline.margin" value="0,0,0,0" />
+        <val key="SideMenuTagline.padUnit" value="2,2,2,2" />
+        <val key="SideMenuTagline.padding" value="1,0,0,0" />
+        <val key="SideMenuTagline.textDecoration" value="0" />
+        <val key="SideMenuTagline.transparency" value="255" />
+        <val key="SideNavigationPanel.bgColor" value="f57777" />
+        <val key="SideNavigationPanel.fgColor" value="ffffcc" />
+        <val key="SideNavigationPanel.transparency" value="255" />
     </theme>
+    <image name="walking-with-dog.png" type="multi"  />
 </resource>

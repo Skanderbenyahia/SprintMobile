@@ -29,7 +29,7 @@ public class ServiceCentreT {
     public List<centreToilettage> findCentreT() {
         List<centreToilettage> centresT = new ArrayList<>();
         con = new ConnectionRequest();
-        con.setUrl("http://localhost/petmypet/web/app_dev.php/afficherCentreToilettageJSON");
+        con.setUrl("http://localhost/Mobile/PETMYPETemna/web/app_dev.php/afficherCentreToilettageJSON");
         con.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
@@ -64,7 +64,7 @@ public class ServiceCentreT {
 
     public void ajoutCommentaire(Commentaire c) {
         ConnectionRequest con = new ConnectionRequest();
-        String Url = "http://localhost/petmypet/web/app_dev.php/addCommentaireJSONAction/" + c.getIdUser() + "/" + c.getIdCentre() + "/" + c.getContenu()    ;
+        String Url = "http://localhost/Mobile/PETMYPETemna/web/app_dev.php/addCommentaireJSONAction/" + c.getIdUser() + "/" + c.getIdCentre() + "/" + c.getContenu()    ;
         con.setUrl(Url);
 
         System.out.println("tt");

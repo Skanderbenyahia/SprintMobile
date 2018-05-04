@@ -4,13 +4,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/wamp64/www/SprintMobile/src/GUI/HomeForm.java</file>
             <file>file:/C:/wamp64/www/SprintMobile/src/GUI/VeterinaireDetailForm.java</file>
             <file>file:/C:/wamp64/www/SprintMobile/src/GUI/CentreToilettageForm.java</file>
-            <file>file:/C:/wamp64/www/SprintMobile/src/Service/ServiceUser.java</file>
-            <file>file:/C:/wamp64/www/SprintMobile/src/Entity/User.java</file>
+            <file>file:/C:/wamp64/www/SprintMobile/src/GUI/ReservationPetsitterForm.java</file>
+            <file>file:/C:/wamp64/www/SprintMobile/src/GUI/ReservationPetsitterDetailForm.java</file>
             <file>file:/C:/wamp64/www/SprintMobile/src/GUI/VeterinaireForm.java</file>
             <file>file:/C:/wamp64/www/SprintMobile/src/Service/ServicesVeterinaire.java</file>
+            <file>file:/C:/wamp64/www/SprintMobile/src/Service/ServiceCentreT.java</file>
             <file>file:/C:/wamp64/www/SprintMobile/src/GUI/CentreTDetailForm.java</file>
+            <file>file:/C:/wamp64/www/SprintMobile/src/Service/ServiceCommentaire.java</file>
+            <file>file:/C:/wamp64/www/SprintMobile/src/GUI/CentreDressageForm.java</file>
         </group>
     </open-files>
 </project-private>

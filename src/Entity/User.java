@@ -10,34 +10,33 @@ package Entity;
  * @author bn-sk
  */
 public class User {
-
     private int id;
+    
+    private String username;
+    private String password;
     private String nom;
     private String prenom;
+    private int telehone;
+    private String email;
     private String adresse;
-    private int telephone;
     private Double stat;
 
-    public User(String nom, String prenom, String adresse, int telephone, Double stat, String username, String password) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse = adresse;
-        this.telephone = telephone;
-        this.stat = stat;
-        this.username = username;
-        this.password = password;
+    public Double getStat() {
+        return stat;
     }
 
-    public User(int id, String nom, String prenom, String adresse, int telephone, Double stat, String username, String password) {
-        this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse = adresse;
-        this.telephone = telephone;
+    public void setStat(Double stat) {
         this.stat = stat;
-        this.username = username;
-        this.password = password;
     }
+    
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+    
 
     public String getNom() {
         return nom;
@@ -55,33 +54,21 @@ public class User {
         this.prenom = prenom;
     }
 
-    public String getAdresse() {
-        return adresse;
+    public int getTelehone() {
+        return telehone;
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
+    public void setTelehone(int telehone) {
+        this.telehone = telehone;
     }
 
-    public int getTelephone() {
-        return telephone;
+    public String getEmail() {
+        return email;
     }
 
-    public void setTelephone(int telephone) {
-        this.telephone = telephone;
+    public void setEmail(String email) {
+        this.email = email;
     }
-
-    public User(int id, String nom, String prenom, String adresse, int telephone, String username, String password) {
-        this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse = adresse;
-        this.telephone = telephone;
-        this.username = username;
-        this.password = password;
-    }
-    private String username;
-    private String password;
 
     public User() {
     }
@@ -109,14 +96,15 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public Double getStat() {
-        return stat;
-    }
-
-    public void setStat(Double stat) {
-        this.stat = stat;
-    }
     
 
+    
+
+   
+
+    
+
+   
+    
+    
 }

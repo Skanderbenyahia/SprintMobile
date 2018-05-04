@@ -7,6 +7,7 @@ package GUI;
 
 import Entity.User;
 import Service.ServiceUser;
+import com.codename1.components.WebBrowser;
 import com.codename1.ui.Button;
 import com.codename1.ui.ComponentGroup;
 import com.codename1.ui.Container;
@@ -22,6 +23,7 @@ import com.codename1.ui.util.Resources;
 import com.codename1.ui.util.UIBuilder;
 import org.mindrot.jbcrypt.BCrypt;
 
+
 /**
  *
  * @author jabou
@@ -35,6 +37,7 @@ public class LoginForm {
     private TextField username;
     private TextField password;
     private Button connecter;
+    private Button inscription;
 
     public LoginForm() {
 
@@ -43,14 +46,16 @@ public class LoginForm {
         theme = UIManager.initFirstTheme("/LoginForm");
         c = uiBuilder.createContainer(theme, "LoginGUI");
         username = (TextField) uiBuilder.findByName("UsernameTF", c);
-        password = (TextField) uiBuilder.findByName("PasswordTF", c);   
+        password = (TextField) uiBuilder.findByName("PasswordTF", c);
+        password.setConstraint(TextField.PASSWORD);
         connecter = (Button) uiBuilder.findByName(("connercterButton"), c);
-        
+        inscription = (Button) uiBuilder.findByName(("inscriptionButton"), c);
         login = (Form) c;
+
         connecter.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-               if ((username.getText().equalsIgnoreCase("")) && (password.getText().equalsIgnoreCase(""))) {
+                if ((username.getText().equalsIgnoreCase("")) && (password.getText().equalsIgnoreCase(""))) {
                     Dialog.show("Error!", "Saisie le nom d'utilisateur et mot de passe", "Ok", null);
                 } else {
                     ServiceUser us = new ServiceUser();
@@ -73,6 +78,14 @@ public class LoginForm {
             }
         });
 
+        /*inscription.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                WebDriver driver = new FirefoxDriver();
+                driver.get("www.google.fr");
+
+            }
+        });*/
     }
 
     public Form getLogin() {
